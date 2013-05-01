@@ -1,0 +1,50 @@
+body{
+	min-width:880px;
+}
+.box{
+	width:300px;
+	background-color: rgb(200,200,200);
+	padding:10px;
+	margin:10px;
+}
+.column{
+	width:400px;
+	float:left;
+	margin: 20px;
+	
+}
+#content{
+	width:880px;
+	
+	margin: 20px auto;
+}
+h2{
+	margin:.25em;
+	margin-bottom:1em;
+}
+.small{
+	font-size: .8em;
+}
+input[type="submit"]{	
+	float:right;
+}
+#cover{
+	width:400px;
+}
+select{
+    width:10em;
+}
+#blocked{
+    height:1.5em;
+}
+.center{
+    margin:.6em 1em;
+    text-size:1.7em;
+}
+.brand{
+    color:white !important;
+}
+.secondary{
+    background-color:red;
+    margin-top:60px;
+}
