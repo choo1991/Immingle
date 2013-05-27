@@ -1,73 +1,66 @@
 <?php
 include "profileHeader.php";
 ?>
+<div class="container padded">
+    <div class="row">
 
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="brand center" href="#">Immingle</a>
-            <div class="nav-collapse collapse">
-                <div class= "center pull-right">
-                    <form class="navbar-form pull-left">
-                        <input class="span2" type="text" placeholder="Search">
-                        <button type="submit" class="btn">Search</button>
-                    </form>
-                    <ul class= "nav">
-                        <li><a href = "account.php">Account</a></li>
-                        <li><a href = "logout.php">Logout</a></li>
+        <div class="span10 offset1" id="notification">
+            <p>Guess what, you just got notified that there will be like .. system maintenance. Cuz this is only a demo.</p>
+            <p>Cuz we are creative..</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class ="row">
+        <div class="span10 offset1">
+        <div class ="tab-content">
+            <div class = "tab-pane" id ="browse"></div>
+            <div class = "tab-pane active" id ="myEvents">
+                <div class ="tabbable">
+                    <ul class = "nav nav-tabs" id = "myTab">
+                        <li class="active"><a href="#home" data-toggle="tab">Upcoming Events</a></li>
+                        <li><a href="#profile" data-toggle="tab">Past Events</a></li>
                     </ul>
                 </div>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div>
-</div>
-
-<div class="secondary navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="nav-collapse collapse">
-                <ul class= "nav">
-                    <li><a href = "browse.php">Browse</a></li>
-                    <li><a href = "mEvents.php">My Events</a></li>
-                    <li><a href= "cEvent">Create an Event</a></li>
-                </ul>
+                <div class ="tab-content">
+                    <div class = "tab-pane active" id ="home">
+                        <div>
+                            <ul class="right">
+                                <button class="active" id = "all" >All</button>
+                                <button id = "join" >Join</button>
+                                <button id = "save" >Save</button>
+                                <button id = "create" >Create</button>
+                            </ul>
+                        </div>
+                        <div id="allContent" class="clearfix">
+                            <div id="result1">
+                                <h1>Korean Kid Drink a Thon</h1>
+                                <div>
+                                    <img src="" alt=""/>
+                                    <span class="date">5/4/2013</span>
+                                    <span class="time">7PM - 9PM</span>
+                                    <span class="creator">with James Mf'in Chang</span>
+                                    <div class="description">
+                                     <p>Le future prez iz getting schwasty. Get it yuhhhh boiiiiiiiii</p>
+                                    <p>Be there or fuck off.</p>
+                                    <p>We still love you though. <3's and stuff.</p>
+                                    <a class="label" href="joinEvent.php">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "tab-pane" id ="profile">
+                    </div>
+                </div>
             </div>
+            <div class = "tab-pane" id ="create"></div>
+        </div>
         </div>
     </div>
 </div>
-<div class ="notification">
 
-</div>
-
-<div id="tab-container" class="tab-container">
-    <ul class='etabs'>
-        <li class='tab'><a href="#tabs1-html">HTML Markup</a></li>
-        <li class='tab'><a href="#tabs1-js">Required JS</a></li>
-        <li class='tab'><a href="#tabs1-css">Example CSS</a></li>
-    </ul>
-    <div id="tabs1-html">
-        <h2>HTML Markup for these tabs</h2>
-        <!-- content -->
-    </div>
-    <div id="tabs1-js">
-        <h2>JS for these tabs</h2>
-        <!-- content -->
-    </div>
-    <div id="tabs1-css">
-        <h2>CSS Styles for these tabs</h2>
-        <!-- content -->
-    </div>
-</div>
 
 <?php
 include "profileFooter.php"

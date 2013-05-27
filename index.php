@@ -1,6 +1,7 @@
 <?php
-include "header.php";
+    include "header.php";
 ?>
+
 <div class="column">
     <h1>Immingle</h1>
     <p>
@@ -13,24 +14,24 @@ include "header.php";
 <div class="column">
     <div class = "box">
         <h2>Log in</h2>
-        <form action = "login.php">
+        <form action="login.php" method="get" id="loginForm">
             <label for="username">Username or Email:</label><br>
             <input type="text" name = "username"><br>
             <label for="password">Password: </label> <br>
             <input type ="password" name ="password"><br>
-            <input type="checkbox" name ="remember" value="remember">
+            <input type="checkbox" name ="remembercb" value="remember" id="rememberme">
             <label class="small" for="remember">Remember me</label>
-            <input type="submit" value= "Submit">
+            <input type="submit" name="login" value= "Submit">
         </form>
     </div>
     <div class = "box">
         <h2>Join</h2>
-        <form action = "register.php">
+        <form action="register.php" method="post" id="registerEmail">
             <label for="username">Email address:</label> <br>
             <input type="email" name = "email"><br>
-            <input type="checkbox" name ="tos" value="tos">
+            <input type="checkbox" name ="toscb" value="tos" id="termsofservice">
             <label class="small" for="tos">I agree to Immingle's term's of service</label>
-            <input type="submit" value= "Submit">
+            <input type="submit" name="register" value= "Submit" disabled="disabled" id="registrationSubmission">
         </form>
     </div>
 </div>
