@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 				// start cookie here. the id is stored in $rows['id']
 				$expireTime = time() + 60*60*24*7;
 				setcookie("username", $id, $expireTime);
-				header("Location: index.php");
+				header("Location: userProfile.php");
 				die();
 			} else {
 ?>
