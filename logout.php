@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_COOKIE['username'])) {
-	setcookie("username", $_COOKIE['username'], -1);
+	setcookie("username", "", -1);
 	header("Location: index.php");
 	die();
 } else {
