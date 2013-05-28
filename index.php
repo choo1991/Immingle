@@ -14,11 +14,11 @@
 <div class="column">
     <div class = "box">
         <h2>Log in</h2>
-        <form action="login.php" method="get" id="loginForm">
-            <label for="username">Username or Email:</label><br>
-            <input type="text" name = "username"><br>
+        <form action="login.php" method="post" id="loginForm">
+            <label for="username">Email:</label><br>
+            <input type="text" name ="username"><br>
             <label for="password">Password: </label> <br>
-            <input type ="password" name ="password"><br>
+            <input type ="password" name="password"><br>
             <input type="checkbox" name ="remembercb" value="remember" id="rememberme">
             <label class="small" for="remember">Remember me</label>
             <input type="submit" name="login" value= "Submit">
