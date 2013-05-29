@@ -4,6 +4,11 @@
 
 <?php
 
+	$username = 'immingle_user';
+	$password = 'turnup12';
+	$hostname = 'localhost'; // This will always need to be localhost on our server.
+	$database = 'immingle';
+
 	// Create a connection to the database.
 	$db = new PDO("mysql:dbname=$database;host=$hostname", $username, $password);
 		// Make any SQL syntax errors result in PHP errors.

@@ -10,7 +10,7 @@ if (isset($_COOKIE['username'])) {
 ?>
 
 	<div class="column">
-		<h1>Immingle</h1>
+		<h1 class="brand">Immingle</h1>
 		<p>
 			<strong>Hipster ipsum</strong> Ennui whatever messenger bag seitan ethical next level. Authentic fingerstache dreamcatcher wolf. Blue bottle post-ironic narwhal +1 disrupt thundercats marfa, echo park sriracha lo-fi photo booth. Mixtape single-origin coffee beard chambray. Literally fanny pack ethnic, mustache terry richardson jean shorts freegan mlkshk.
 		</p>
@@ -20,25 +20,25 @@ if (isset($_COOKIE['username'])) {
 	</div>
 	<div class="column">
 		<div class = "box">
-			<h2>Log in</h2>
+			<h2>LOGIN</h2>
 			<form action="login.php" method="post" id="loginForm">
-				<label for="username">Email:</label><br>
-				<input type="text" name ="username"><br>
+				<label for="username">Email Address:</label><br>
+				<input type="email" name ="username" placeholder="Enter Email Address.."><br>
 				<label for="password">Password: </label> <br>
-				<input type ="password" name="password"><br>
+				<input type ="password" name="password" placeholder="Enter Password.."><br>
 				<input type="checkbox" name ="remembercb" value="remember" id="rememberme">
 				<label class="small" for="remember">Remember me</label>
-				<input type="submit" name="login" value= "Submit">
+				<input type="submit" name="login" value= "Sign In">
 			</form>
 		</div>
 		<div class = "box">
-			<h2>Join</h2>
+			<h2>JOIN FOR FREE</h2>
 			<form action="register.php" method="post" id="registerEmail">
-				<label for="username">Email address:</label> <br>
-				<input type="email" name = "email"><br>
+				<label for="username">Email Address:</label> <br>
+				<input type="email" name = "email" placeholder="Enter Email Address.."><br>
 				<input type="checkbox" name ="toscb" value="tos" id="termsofservice">
-				<label class="small" for="tos">I agree to Immingle's term's of service</label>
-				<input type="submit" name="register" value= "Submit" disabled="disabled" id="registrationSubmission">
+				<label class="small" for="tos">I agree with Immingle's Terms of Use</label>
+				<input type="submit" name="register" value= "Sign Up" disabled="disabled" id="registrationSubmission">
 			</form>
 		</div>
 	</div>

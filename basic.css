@@ -1,11 +1,38 @@
 body{
 	min-width:880px;
+    font-size:16px;
+        background-color: #00B8F5;
+
+}
+.box form input[type="password"], .box form input[type="email"], .box form input[type="text"]{
+    width:100%;
+    padding:.4em;
+
+    border:0;
+    margin-bottom:1em;
 }
 .box{
-	width:300px;
-	background-color: rgb(200,200,200);
-	padding:10px;
-	margin:10px;
+	width:250px;
+	background-color: rgb(237,237,237);
+	padding:10px 30px 10px 20px;
+	margin:10px auto 30px auto;
+    font-family: "Titillium Web", sans-serif;
+   -moz-box-shadow:    0 0 10px #777777;
+   -webkit-box-shadow: 0 0 10px #777777;
+   box-shadow:         0 0 10px #777777;
+}
+.box h2 {
+    font-weight:300;
+    margin:0;
+}
+.box label{
+    font-size: .8em;
+    font-weight:200;
+}
+.brand{
+    color:white !important;
+    font-size: 2em !important;
+    font-family: 'Bitter', serif;
 }
 .column{
 	width:400px;
@@ -22,12 +49,12 @@ h2{
 	margin:.25em;
 	margin-bottom:1em;
 }
-.small{
-	font-size: .8em;
+.box label.small{
+	font-size: .55em;
+    font-weight: bold;
+    letter-spacing: -.1em;
 }
-input[type="submit"]{	
-	float:right;
-}
+
 #cover{
 	width:400px;
 }
@@ -37,14 +64,86 @@ select{
 #blocked{
     height:1.5em;
 }
-.center{
-    margin:.6em 1em;
-    text-size:1.7em;
+.box input[type="submit"] {
+   float:right;
+   border: 1px #777777;
+   background-color: #777777;
+   padding:.2em .7em;
+   color: rgb(237, 237, 237);
+   font-size:1.15em;
+   margin-top:.5em;
+
 }
-.brand{
-    color:white !important;
+.box input[type="checkbox"]{
+    margin:0 0 2em 0;
 }
-.secondary{
-    background-color:red;
-    margin-top:60px;
+
+.first{
+    margin-top:35px;
+}
+.right{
+    float:right;
+
+}
+.padded{
+    padding:10px 0;
+}
+#notification{
+    background-color:greenyellow;
+    height:100px;
+    padding:20px;
+
+}
+.clearfix{
+    clear:both;
+}
+.category{
+    float:left;
+    height: 100px;
+    width:180px;
+    margin-left:20px;
+    background-color:plum;
+
+}
+.firstCat{
+    margin-left:0;
+}
+#categories .row{
+    margin-top:20px;
+}
+.caption{
+    height:18px;
+    background-color:black;
+    color:white;
+
+}
+.img{
+    width:150px;
+    height:80px;
+}
+.date{
+
+}
+.time{
+
+}
+.creator{
+    font-size:.9em;
+}
+.description{
+    font-size:.8em;
+    padding-left:20px;
+}
+.full{
+    width:100%;
+}
+
+label{
+    font-size:1.4em;
+    font-weight:bold;
+    margin-top:40px;
+}
+
+.error {
+    background-color: red;
 }

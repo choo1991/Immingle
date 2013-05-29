@@ -37,7 +37,7 @@
 			}
 
 ?> 
-			<h1>Immingle</h1>
+			<h1 class="brand">Immingle</h1>
 			<div class="column">
 				<div class="box">
 
