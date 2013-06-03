@@ -16,9 +16,22 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		// Make any SQL syntax errors result in PHP errors.
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	if ($requestType == "events") {
-		
+	if ($requestType == "myEvents") {
+		$requestCurrentEvents = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId FROM Attending a LEFT JOIN Events e ON e.id = a.eventId 
+			LEFT JOIN Users u ON u.id = e.ownerId WHERE a.userId = :user AND a.status = '1' OR a.status = '0'";
+
+		$update = $db->prepare($requestCurrentEvents);
+		if ($update->execute(array('user' => $id)) {
+			echo json_encode($update);
+		} else {
+			echo json_encode(array('success' => 0));
+		}
+	} else if ($requestType == "categories") {
+		$requestCategories = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId, c.title FROM Attending a LEFT JOIN Events e ON e.id = a.eventId 
+			LEFT JOIN Users u ON u.id = e.ownerId RIGHT JOIN Category c ON c.eventId = e.id WHERE c.title = :category";
 	}
+
+
 
 }
 
