@@ -18,15 +18,16 @@ include "profileHeader.php";
                         <div class ="tab-content">
                             <div class = "tab-pane active" id ="events">
                                 <div id="allContent">
-
+                                    <div class="box">
+                                    <p>Advanced Search</p>
                                     <form>
-                                        <span>Keywords: </span><input type ="text" name ="keywords"><span>  Location: </span></label><input name = "location" type ="text"><br>
+                                        <label for="keywords">Keywords: </label><input type ="text" name ="keywords"><label for ="location">  Location:</label><input name = "location" type ="text"><br>
                                         <div class="right">
                                             <p><a href="options">More Options..</a></p>
-                                            <button>Search</button>
+                                            <button class="fancyButton">Search</button>
                                         </div>
                                     </form>
-
+                                </div>
 
                                     <div id="categories" class= "clearfix" name="categories">
                                         <label for="categories">Categories</label>
@@ -99,7 +100,7 @@ include "profileHeader.php";
     </div>
 
 </div>
-
+<script src="events.js"></script>
 <?php
 include "profileFooter.php"
 ?>
