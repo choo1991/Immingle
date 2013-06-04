@@ -1,5 +1,24 @@
 <?php
 
+/*
+	Must send a post request for it to do anything.
+	Will return json object with success of either 1 or 0
+	for success and failure respectively.
+
+	Takes the 
+		cookie id,
+		requestType: new (to add a new event) anything else to update,
+		
+	NEW EVENT AND UPDATES REQUIRE
+		title,
+		datetime,
+		location,
+		blurb
+
+	IF USER WANTS TO UPDATE, JUST GIVE THEM WHAT THEY ALREADY HAVE IN THE DATABASE
+	FILLED OUT, SO THEY CAN CHANGE PARTS OF IT THEY WANT AND LEAVE THE REST ALONE
+*/
+
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$id => $_POST['cookieId'],
