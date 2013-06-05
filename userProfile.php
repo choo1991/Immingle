@@ -46,7 +46,7 @@ include "profileHeader.php";
 									<div class="description">
 									<p>Le future prez iz getting schwasty. Get it yuhhhh boiiiiiiiii</p>
 									<p>Be there or fuck off.</p>
-									<p>We still love you though. <3s and stuff.</p>
+									<p>We still love you though. </p>
 									<a class="label" href="joinEvent.php">View</a>
 									</div>
 								</div>
@@ -63,7 +63,7 @@ include "profileHeader.php";
 	</div>
 </div>
 
-
+<script src="userProfile.js"></script>
 <?php
 include "profileFooter.php";
 ?>

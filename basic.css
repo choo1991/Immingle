@@ -1,7 +1,26 @@
 body{
-	min-width:880px;
+    min-width:880px;
     font-size:16px;
-        background-color: #00B8F5;
+
+
+        /* IE10 Consumer Preview */ 
+background-image: -ms-linear-gradient(top, #63B1E5 0%, #FFFFFF 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-linear-gradient(top, #63B1E5 0%, #FFFFFF 100%);
+
+/* Opera */ 
+background-image: -o-linear-gradient(top, #63B1E5 0%, #FFFFFF 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #63B1E5), color-stop(1, #FFFFFF));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-linear-gradient(top, #63B1E5 0%, #FFFFFF 100%);
+
+/* W3C Markup, IE10 Release Preview */ 
+background-image: linear-gradient(to bottom, #63B1E5 0%, #FFFFFF 100%);
+background-repeat:no-repeat;
 
 }
 .box form input[type="password"], .box form input[type="email"], .box form input[type="text"]{
@@ -12,14 +31,14 @@ body{
     margin-bottom:1em;
 }
 .box{
-	width:250px;
-	background-color: rgb(237,237,237);
-	padding:10px 30px 10px 20px;
-	margin:10px auto 30px auto;
+    width:250px;
+    background-color: rgb(237,237,237);
+    padding:10px 30px 10px 20px;
+    margin:10px auto 30px auto;
     font-family: "Titillium Web", sans-serif;
-   -moz-box-shadow:    0 0 10px #777777;
-   -webkit-box-shadow: 0 0 10px #777777;
-   box-shadow:         0 0 10px #777777;
+   -moz-box-shadow:    0 0 30px #777777;
+   -webkit-box-shadow: 0 0 30px #777777;
+   box-shadow:         0 0 30px #777777;
 }
 .box h2 {
     font-weight:300;
@@ -31,32 +50,64 @@ body{
 }
 .brand{
     color:white !important;
-    font-size: 2em !important;
-    font-family: 'Bitter', serif;
+    font-size: 3.5em !important;
+    font-family: 'Shadows Into Light', serif;
+    margin: 0pt;
 }
 .column{
-	width:400px;
-	float:left;
-	margin: 20px;
-	
+    width:400px;
+    float:left;
+    margin: 20px;
+    
+}
+
+p.caption{
+    font-size:16px !important;
+    color:black;
+    background-color:white;
+    margin-top:0;
+    position:relative;
+    top:-10px;
+    
+    -moz-box-shadow:    0 0 70px #777777;
+    -webkit-box-shadow: 0 0 70px #777777;
+    box-shadow:         0 0 70px #777777;
+    height:100px;
+    padding:10px;
+
+
+}
+#captionTitle{
+    font-weight:bold;
+    font-size:20px;
+    margin-right:60px;
+    
+}
+.column p{
+    font-size: 20px;
+    font-family: Titillium Web, sans-serif;
+    margin-top: 0px;
 }
 #content{
-	width:880px;
-	
-	margin: 20px auto;
+    width:880px;
+    
+    margin: 20px auto;
 }
 h2{
-	margin:.25em;
-	margin-bottom:1em;
+    margin:.25em;
+    margin-bottom:1em;
 }
 .box label.small{
-	font-size: .55em;
-    font-weight: bold;
-    letter-spacing: -.1em;
+    font-size: .6em;
+    font-weight: 300;
+    letter-spacing: -.05em;
 }
 
 #cover{
-	width:400px;
+    width:400px;
+    -moz-box-shadow:    0 0 50px #777777;
+   -webkit-box-shadow: 0 0 50px #777777;
+   box-shadow:         0 0 50px #777777;
 }
 select{
     width:10em;
@@ -70,17 +121,14 @@ select{
    background-color: #777777;
    padding:.2em .7em;
    color: rgb(237, 237, 237);
-   font-size:1.15em;
    margin-top:.5em;
 
 }
 .box input[type="checkbox"]{
-    margin:0 0 2em 0;
+    margin: 0 0 2em 0;
 }
 
-.first{
-    margin-top:35px;
-}
+
 .right{
     float:right;
 
@@ -121,12 +169,7 @@ select{
     width:150px;
     height:80px;
 }
-.date{
 
-}
-.time{
-
-}
 .creator{
     font-size:.9em;
 }
