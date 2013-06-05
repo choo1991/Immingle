@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		if ($requestType == "myEvents") { // if requesting my events	
-			$requestCurrentEvents = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId FROM Attending a LEFT JOIN Events e ON e.id = a.eventId LEFT JOIN Users u ON u.id = e.ownerId WHERE a.userId = :user AND a.status = 1 OR a.status = 0";
+			$requestCurrentEvents = "SELECT e.id, e.title, e.startTime, e.endTime, e.location, e.blurb, e.ownerId FROM Attending a LEFT JOIN Events e ON e.id = a.eventId LEFT JOIN Users u ON u.id = e.ownerId WHERE a.userId = :user AND a.status = 1 OR a.status = 0";
 
 				// return where status is 1 or 0; 1 is attending, 0 is saved
 		
