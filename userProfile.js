@@ -22,6 +22,7 @@ function displayResults(data){
 		});
 		$.each(data, function(index, val){
 			console.log(val);
+
 			var overallDiv = $("<div>").addClass("result");
 			var headline = $("h3").addClass("eventHeadline").text(val.title);
 			var portrait = $("<img>").attr("src","img/placeholderEvent.png");
@@ -32,6 +33,7 @@ function displayResults(data){
 			var label = $("<a>").addClass("label").attr("href","joinEvent.php").text("View");
 			overallDiv.append(headline, portrait, startDate,endDate,description,location,label);
 			$("#allContent").append(overallDiv);
+
 		});	
 	}
 	

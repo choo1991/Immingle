@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 				// $requestCategories = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId, c.title FROM Attending a LEFT JOIN Events e ON e.id = a.eventId 
 				// 	LEFT JOIN Users u ON u.id = e.ownerId RIGHT JOIN Category c ON c.eventId = e.id WHERE c.title = :category";
 				
-				$requestCategories = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId, a.userId, a.status, c.title 
+				$requestCategories = "SELECT e.id, e.title, e.startTime, e.endTime, e.location, e.blurb, e.ownerId, a.userId, a.status, c.title 
 					FROM Category c LEFT JOIN Events e ON e.id = c.eventId LEFT JOIN Users u ON u.id = e.ownerId LEFT JOIN Attending a 
 					ON a.eventId = e.id WHERE c.title = :category AND a.userId = :id UNION 
 					(SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId, a.userId, a.status, c.title FROM Category c 
