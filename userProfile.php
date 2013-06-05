@@ -28,17 +28,19 @@ include "profileHeader.php";
 				<div class ="tab-content">
 					<div class = "tab-pane active" id ="home">
 						<div>
-							<ul class="right">
-								<button class="active" id = "all" >All</button>
-								<button id = "join" >Join</button>
-								<button id = "save" >Save</button>
-								<button id = "create" >Create</button>
+							<ul class="right" >
+								<button disabled ="disabled" class="active" id = "all" >All</button>
+								<button disabled ="disabled" id = "join" >Join</button>
+								<button disabled ="disabled" id = "save" >Save</button>
+								<button disabled ="disabled" id = "create" >Create</button>
 							</ul>
 						</div>
+
 						<div id="allContent" class="clearfix">
-							<div id="result1">
-								<h1>Korean Kid Drink a Thon</h1>
-								<div>
+					   		<div id="defaultContent">
+
+								<h1>No Events at this time. <a href="events.php">Explore events around you!</a></h1>
+								<!-- <div>
 									<img src="" alt=""/>
 									<span class="date">5/4/2013</span>
 									<span class="time">7PM - 9PM</span>
@@ -49,7 +51,8 @@ include "profileHeader.php";
 									<p>We still love you though. </p>
 									<a class="label" href="joinEvent.php">View</a>
 									</div>
-								</div>
+								</div> -->
+									
 							</div>
 						</div>
 					</div>
