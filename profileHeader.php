@@ -12,6 +12,7 @@ echo '<!DOCTYPE html>
     <link rel="stylesheet" type="text/css" href="profile.css">
     <link rel="stylesheet" type="text/css" href="tabs/tabs.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="/cookie/jquery.cookie.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     <script src="basic.js"></script>
 

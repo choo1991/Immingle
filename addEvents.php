@@ -51,11 +51,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		);
 
 		$add = $db->prepare($addEvent);
-		if ($attend->execute($data) {
+
+		$attend->execute($data);
+		$queryId = $db->exec();
+		if ($queryId >0) {
 			echo json_encode(array('success' => 1));
 		} else {
 			echo json_encode(array('success' => 0));
 		}
+
+		// if ($attend->execute($data) {
+		// 	echo json_encode(array('success' => 1));
+		// } else {
+		// 	echo json_encode(array('success' => 0));
+		// }
 	} else {
 		$title = $_POST['title'];
 		$datetime = $_POST['timeDate'];
@@ -72,7 +81,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		);
 
 		$update = $db->prepare($updateEvent);
-		if ($update->execute($newData) {
+		// if ($update->execute($newData) {
+		// 	echo json_encode(array('success' => 1));
+		// } else {
+		// 	echo json_encode(array('success' => 0));
+		// }
+		$update->execute($newData)
+		$queryId = $db->exec();
+		if ($queryId >0) {
 			echo json_encode(array('success' => 1));
 		} else {
 			echo json_encode(array('success' => 0));

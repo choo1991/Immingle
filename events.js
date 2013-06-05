@@ -1,3 +1,5 @@
 $(document).ready(function(){
-	alert('foobar');
+
+	var cookieId = $.cookie('username'));
+
 });

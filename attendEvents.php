@@ -34,28 +34,55 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 		$status = $_POST['status']; // status
 		$attendEvent = "INSERT INTO Attending (eventId, userId, status) VALUES (:eventId, :userId, :status)";
 		$attend = $db->prepare($attendEvent);
-		if ($attend->execute(array(':eventId' => $eventId, ':userId' => $id, 'status' => $status))) {
+
+		$attend->execute(array(':eventId' => $eventId, ':userId' => $id, 'status' => $status));
+		$queryId = $db->lastInsertId();
+		if ($queryId != null) {
 			echo json_encode(array('success' => 1));
 		} else {
 			echo json_encode(array('success' => 0));
 		}
+
+		// if ($attend->execute(array(':eventId' => $eventId, ':userId' => $id, 'status' => $status))) {
+		// 	echo json_encode(array('success' => 1));
+		// } else {
+		// 	echo json_encode(array('success' => 0));
+		// }
 	} else if ($requestType == "attend" && $_POST['update'] == 1) { // request is attend and it's updating
 		$status = $_POST['status']; // status
 		$updateAttending = "UPDATE Attending SET status = :status WHERE userId = :userId AND eventId = :eventId";
 		$update = $db->prepare($updateAttending);
-		if ($update->execute(array(':eventId' => $eventId, ':userId' => $id, ':status' => $status))) {
+		// if ($update->execute(array(':eventId' => $eventId, ':userId' => $id, ':status' => $status))) {
+		// 	echo json_encode(array('success' => 1));
+		// } else {
+		// 	echo json_encode(array('success' => 0));
+		// }
+
+		$update->execute(array(':eventId' => $eventId, ':userId' => $id, ':status' => $status));
+		$queryId = $db->exec();
+		if ($queryId >0) {
 			echo json_encode(array('success' => 1));
 		} else {
 			echo json_encode(array('success' => 0));
 		}
+
 	} else { // anything else to remove
 		$removeEvent = "DELETE FROM Attending WHERE userId = :id AND eventId = :event";
 		$remove = $db->prepare($removeEvent);
-		if ($remove->execute(array(':id' => $id, ':eventId' => $eventId))) {
+		$remove->execute(array(':id' => $id, ':eventId' => $eventId))
+		$queryId = $db->exec();
+		if ($queryId > 0) {
 			echo json_encode(array('success' => 1));
 		} else {
 			echo json_encode(array('success' => 0));
 		}
+
+
+		// if ($remove->execute(array(':id' => $id, ':eventId' => $eventId))) {
+		// 	echo json_encode(array('success' => 1));
+		// } else {
+		// 	echo json_encode(array('success' => 0));
+		// }
 	}
 }
 
