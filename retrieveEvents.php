@@ -20,11 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 	if(!isset($_GET['cookieId']) || !isset($_GET['requestType'])){
 		header("HTTP/1.1 400 Invalid Request");
         die("You supplied an invalid value for the parameter 'cookieId' or 'requestType'.");
-<<<<<<< HEAD
 	} else {
-=======
-	}else{
->>>>>>> 1e9f4c5019ca0d316f4995e4e53540b03a65d643
 		$id = $_GET['cookieId'];
 		$requestType = $_GET['requestType'];
 
@@ -40,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		if ($requestType == "myEvents") { // if requesting my events	
-<<<<<<< HEAD
 			$requestCurrentEvents = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId FROM Attending a LEFT JOIN Events e ON e.id = a.eventId LEFT JOIN Users u ON u.id = e.ownerId WHERE a.userId = :user AND a.status = 1 OR a.status = 0";
 
 				// return where status is 1 or 0; 1 is attending, 0 is saved
@@ -53,26 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			// echo $rows['length'];
 			$num_rows = count($rows);
 			if ($num_rows > 0) {
-=======
-			$requestCurrentEvents = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId FROM Attending a LEFT JOIN Events e ON e.id = a.eventId 
-		 		LEFT JOIN Users u ON u.id = e.ownerId WHERE a.userId = :user AND a.status = '1' OR a.status = '0'";
-
-		// 		// return where status is 1 or 0; 1 is attending, 0 is saved
-		
-			$update = $db->prepare($requestCurrentEvents);
-			echo json_encode(array('cookie'=>id, 'type' =>$requestType ));
-		// 	
-			if ($update->execute(array('user' => $id)) {
-				$rows = $request->fetchAll(PDO::FETCH_ASSOC);
->>>>>>> 1e9f4c5019ca0d316f4995e4e53540b03a65d643
 				echo json_encode($rows);
 			} else {
 				echo json_encode(array('success' => 0));
 			}
-<<<<<<< HEAD
 
-=======
->>>>>>> 1e9f4c5019ca0d316f4995e4e53540b03a65d643
 		} else if ($requestType == "categories") { // looking for categories
 
 		// 	 CHECK THE VALUE OF THE userId INDEX OF THE ARRAY. IF IT'S EQUAL TO THE VALUE OF THE ID FOUND IN THE COOKIE, THEN IT'S SOMETHING
@@ -98,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 					WHERE c.title ='Nature' GROUP BY e.id and a.userId)";
 			
 				$request = $db->prepare($requestCategories);
-<<<<<<< HEAD
 
 				$request->execute(array('cookie'=> $id, 'type' => $category ));
 
@@ -112,9 +91,6 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 				}
 
 				//echo json_encode(array('cookie'=>id, 'type' => "categories" ));
-=======
-				echo json_encode(array('cookie'=>id, 'type' => "categories" ));
->>>>>>> 1e9f4c5019ca0d316f4995e4e53540b03a65d643
 			// 	if ($request->execute(array('category' => $category, 'id' => $id)) {
 			// 		$rows = $request->fetch(PDO::FETCH_ASSOC);
 			// 		echo json_encode($rows);
