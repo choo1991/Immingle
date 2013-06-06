@@ -1,13 +1,8 @@
 <?php
 
-// Following two lines used to enable php errors
-// error_reporting(E_ALL);
-// ini_set('display_errors', 'On');
-header('Content-type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
-	if(!isset($_GET['cookieId'])){
-
+	if(!isset($_GET['cookieId']) || !isset($_GET['requestType'])){
 		header("HTTP/1.1 400 Invalid Request");
         die("You supplied an invalid value for the parameter 'cookieId' or 'requestType'.");
 	} else {
@@ -23,15 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			// Make any SQL syntax errors result in PHP errors.
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		$requestProfile = "SELECT * FROM Users WHERE id = :user";
+		$requestName = "SELECT firstName, lastName FROM Users WHERE id = :user";
 	
-		$profile = $db->prepare($requestProfile);
+		$profile = $db->prepare($requestName);
 
 		$profile->execute(array('user' => $id));
 
-
-		$rows = $profile->fetch(PDO::FETCH_ASSOC);
-
+		$rows = $profile->fetchAll(PDO::FETCH_ASSOC);
 		// echo $rows['length'];
 		$num_rows = count($rows);
 		if ($num_rows > 0) {
@@ -39,8 +32,5 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 		} else {
 			echo json_encode(array('success' => 0));
 		}
-
-	}
-}
 
 ?>
