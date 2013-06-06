@@ -17,11 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 	$tag = $_GET['tag'];
 	$search = "%" . $tag . "%";
-
 	// $searchTag = "SELECT * FROM Events WHERE location LIKE :searchTerm";
 	$searchTag = "SELECT * FROM Keywords k LEFT JOIN Events e ON e.id = k.eventId WHERE k.keyword LIKE :searchTerm GROUP BY e.id";
 
-	$find = $db->prepare($searchLocation);
+	$find = $db->prepare($searchTag);
 
 	$find->execute(array('searchTerm' => $search));
 
