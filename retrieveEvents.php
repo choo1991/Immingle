@@ -1,5 +1,6 @@
 <?php
-
+header("HTTP/1.1 400 Invalid Request");
+die("You supplied an invalid value for the parameter 'cookieId' or 'requestType'.");
 /*
 
 	Retrieves a list of events as a json object, or just sucess: 0 if failure
@@ -14,10 +15,12 @@
 	returns json object on success, sucess: 0 on failure
 
 */
+// Following two lines used to enable php errors
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 header('Content-type: application/json');
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
-
-	if(!isset($_GET['cookieId']) || !isset($_GET['requestType'])){
+	if(!isset($_POST['cookieId'])|| !isset($_POST['requestType'])){
 		header("HTTP/1.1 400 Invalid Request");
         die("You supplied an invalid value for the parameter 'cookieId' or 'requestType'.");
 	} else {
@@ -70,16 +73,16 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 				// $requestCategories = "SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId, c.title FROM Attending a LEFT JOIN Events e ON e.id = a.eventId 
 				// 	LEFT JOIN Users u ON u.id = e.ownerId RIGHT JOIN Category c ON c.eventId = e.id WHERE c.title = :category";
 				
-				$requestCategories = "SELECT e.id, e.title, e.startTime, e.endTime, e.location, e.blurb, e.ownerId, a.userId, a.status, c.title 
+				$requestCategories = "SELECT DISTINCT e.id, e.title, e.startTime, e.endTime, e.location, e.blurb, e.ownerId, a.userId, a.status, c.title 
 					FROM Category c LEFT JOIN Events e ON e.id = c.eventId LEFT JOIN Users u ON u.id = e.ownerId LEFT JOIN Attending a 
 					ON a.eventId = e.id WHERE c.title = :category AND a.userId = :id UNION 
-					(SELECT e.id, e.title, e.datetime, e.location, e.blurb, e.ownerId, a.userId, a.status, c.title FROM Category c 
+					(SELECT e.id, e.title, e.startTime,e.endTime, e.location, e.blurb, e.ownerId, a.userId, a.status, c.title FROM Category c 
 					LEFT JOIN Events e ON e.id = c.eventId LEFT JOIN Users u ON u.id = e.ownerId LEFT JOIN Attending a ON a.eventId = e.id 
-					WHERE c.title ='Nature' GROUP BY e.id and a.userId)";
+					WHERE c.title =:category GROUP BY e.id and a.userId)";
 			
 				$request = $db->prepare($requestCategories);
-
-				$request->execute(array('cookie'=> $id, 'type' => $category ));
+				// $update->execute(array('user' => $id));
+				$request->execute(array('id'=> $id, 'category' => $category ));
 
 				$rowsTwo = $request->fetchAll(PDO::FETCH_ASSOC);
 				// echo $rows['length'];
@@ -100,6 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
 			}
 		}
 	}
+}
 
 
 }

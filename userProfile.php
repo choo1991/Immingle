@@ -22,45 +22,43 @@ include "profileHeader.php";
 				<div class ="tabbable">
 					<ul class = "nav nav-tabs" id = "myTab">
 						<li class="active"><a href="#home" data-toggle="tab">Upcoming Events</a></li>
-						<li><a href="#profile" data-toggle="tab">Past Events</a></li>
+						<li><a href="#past" data-toggle="tab">Past Events</a></li>
 					</ul>
 				</div>
 				<div class ="tab-content">
 					<div class = "tab-pane active" id ="home">
 						<div>
-							<ul class="right" >
-								<button disabled ="disabled" class="active" id = "all" >All</button>
-								<button disabled ="disabled" id = "join" >Join</button>
-								<button disabled ="disabled" id = "save" >Save</button>
-								<button disabled ="disabled" id = "create" >Create</button>
+							<ul class="filters">
+								<button disabled ="disabled" id = "created" class="fancyButton" >Created</button>
+								<button disabled ="disabled" id = "saved" class="fancyButton">Saved</button>
+								<button disabled ="disabled" id = "joined"  class="fancyButton">Joined</button>
+								<button disabled ="disabled" class="fancyButton active" id = "all" >All</button>
 							</ul>
 						</div>
 
-						<div id="allContent" class="clearfix">
+						<div id="allContent" class="clearfix browsedEvents">
 					   		<div id="defaultContent">
 
-								<h1>No Events at this time. <a href="events.php">Explore events around you!</a></h1>
-								<!-- <div>
-									<img src="" alt=""/>
-									<span class="date">5/4/2013</span>
-									<span class="time">7PM - 9PM</span>
-									<span class="creator">with James Mf'in Chang</span>
-									<div class="description">
-									<p>Le future prez iz getting schwasty. Get it yuhhhh boiiiiiiiii</p>
-									<p>Be there or fuck off.</p>
-									<p>We still love you though. </p>
-									<a class="label" href="joinEvent.php">View</a>
-									</div>
-								</div> -->
+								<h2>No Events at this time. <a href="events.php">Explore events around you!</a></h2>
+
 									
 							</div>
 						</div>
 					</div>
-					<div class = "tab-pane" id ="profile">
+					<div class = "tab-pane" id ="past">
+						<div>
+							<ul class="filters">
+								<button disabled ="disabled" id = "created" class="fancyButton" >Created</button>
+								<button disabled ="disabled" id = "saved" class="fancyButton">Saved</button>
+								<button disabled ="disabled" id = "joined"  class="fancyButton">Joined</button>
+								<button disabled ="disabled" class="fancyButton active" id = "all" >All</button>
+							</ul>
+						</div>
+						<h2>You haven't been to any events at this time. </h2>
 					</div>
 				</div>
 			</div>
-			<div class = "tab-pane" id ="create"></div>
+			
 		</div>
 		</div>
 	</div>

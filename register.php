@@ -39,7 +39,7 @@
 ?> 
 			<h1 class="brand">Immingle</h1>
 			<div class="column">
-				<div class="box">
+				<div class="box shadow">
 
 					<h2>Set-Up Account</h2>
 					<form method="post" action="register.php" id="registrationForm">

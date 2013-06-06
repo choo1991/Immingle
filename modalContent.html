@@ -1,0 +1,270 @@
+<style>
+#modal {
+	position:absolute;
+	background:rgba(255,255,255,1);
+	border-radius:14px;
+	padding:8px;
+	z-index:1030;
+}
+
+#modalContent {
+	border-radius:8px;
+	background:#fff;
+	padding:20px;
+}
+#overlay {
+				position:fixed; 
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				background:#000;
+				opacity:0.5;
+				filter:alpha(opacity=50);
+			}
+
+
+#close {
+	position:absolute;
+	background:url(img/close.png) 0 0 no-repeat;
+	width:24px;
+	height:27px;
+	display:block;
+	text-indent:-9999px;
+	top:-7px;
+	right:-7px;
+}
+#modal label{
+	display:block;
+	width:200px;
+	float:left;
+	margin-right:50px;
+	margin-top:0;
+}
+
+#modal textarea{
+	width:740px;
+}
+#modal .fancyButton{
+	margin-right: 150px;
+}
+</style>
+<div > 
+	<h2>Create New Event</h2>
+    <form id="newEvent">
+    	<label>Name of Event:</label><input id="modalName" type="text">
+    	<br><label>Date:</label><select id="modalMonth" name="month">
+			
+			<option value="01">January</option>
+			<option value="02">February</option>
+			<option value="03">March</option>
+			<option value="04">April</option>
+			<option value="05">May</option>
+			<option value="06">June</option>
+			<option value="07">July</option>
+			<option value="08">August</option>
+			<option value="09">September</option>
+			<option value="10">October</option>
+			<option value="11">November</option>
+			<option value="12">December</option>
+
+    	</select>
+    	<select id="modalDay" name="day">
+    		<option value="01">01</option>
+			<option value="02">02</option>
+			<option value="03">03</option>
+			<option value="04">04</option>
+			<option value="05">05</option>
+			<option value="06">06</option>
+			<option value="07">07</option>
+			<option value="08">08</option>
+			<option value="09">09</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+			<option value="12">12</option>
+			<option value="13">13</option>
+			<option value="14">14</option>
+			<option value="15">15</option>
+			<option value="16">16</option>
+			<option value="17">17</option>
+			<option value="18">18</option>
+			<option value="19">19</option>
+			<option value="20">20</option>
+			<option value="21">21</option>
+			<option value="22">22</option>
+			<option value="23">23</option>
+			<option value="24">24</option>
+			<option value="25">25</option>
+			<option value="26">26</option>
+			<option value="27">27</option>
+			<option value="28">28</option>
+			<option value="29">29</option>
+			<option value="30">30</option>
+			<option value="31">31</option>
+    	</select>
+    	<br><label>Start Time:</label><select id="modalSTime" name="time">
+    		<option value="00:00">0:00</option>
+			<option value="00:30">0:30</option>
+    		<option value="01:00">1:00</option>
+			<option value="01:30">1:30</option>
+			<option value="02:00">2:00</option>
+			<option value="02:30">2:30</option>
+			<option value="03:00">3:00</option>
+			<option value="03:30">3:30</option>
+			<option value="04:00">4:00</option>
+			<option value="04:30">4:30</option>
+			<option value="05:00">5:00</option>
+			<option value="05:30">5:30</option>
+			<option value="06:00">6:00</option>
+			<option value="06:30">6:30</option>
+			<option value="07:00">7:00</option>
+			<option value="07:30">7:30</option>
+			<option value="08:00">8:00</option>
+			<option value="08:30">8:30</option>
+			<option value="09:00">9:00</option>
+			<option value="09:30">9:30</option>
+			<option value="10:00">10:00</option>
+			<option value="10:30">10:30</option>
+			<option value="11:00">11:00</option>
+			<option value="11:30">11:30</option>
+			<option value="12:00">12:00</option>
+			<option value="12:30">12:30</option>
+			<option value="13:00">13:00</option>
+			<option value="13:30">13:30</option>
+			<option value="14:00">14:00</option>
+			<option value="14:30">14:30</option>
+			<option value="15:00">15:00</option>
+			<option value="15:30">15:30</option>
+			<option value="16:00">16:00</option>
+			<option value="16:30">16:30</option>
+			<option value="17:00">17:00</option>
+			<option value="17:30">17:30</option>
+			<option value="18:00">18:00</option>
+			<option value="18:30">18:30</option>
+			<option value="19:00">19:00</option>
+			<option value="19:30">19:30</option>
+			<option value="20:00">20:00</option>
+			<option value="20:30">20:30</option>
+			<option value="21:00">21:00</option>
+			<option value="21:30">21:30</option>
+			<option value="22:00">22:00</option>
+			<option value="22:30">22:30</option>
+			<option value="23:00">23:00</option>
+			<option value="23:30">23:30</option>
+
+    	</select>
+
+    
+    	<br><label>End Time:</label><select id="modalETime" name="time">
+
+			<option value="00:00">0:00</option>
+			<option value="00:30">0:30</option>
+    		<option value="01:00">1:00</option>
+			<option value="01:30">1:30</option>
+			<option value="02:00">2:00</option>
+			<option value="02:30">2:30</option>
+			<option value="03:00">3:00</option>
+			<option value="03:30">3:30</option>
+			<option value="04:00">4:00</option>
+			<option value="04:30">4:30</option>
+			<option value="05:00">5:00</option>
+			<option value="05:30">5:30</option>
+			<option value="06:00">6:00</option>
+			<option value="06:30">6:30</option>
+			<option value="07:00">7:00</option>
+			<option value="07:30">7:30</option>
+			<option value="08:00">8:00</option>
+			<option value="08:30">8:30</option>
+			<option value="09:00">9:00</option>
+			<option value="09:30">9:30</option>
+			<option value="10:00">10:00</option>
+			<option value="10:30">10:30</option>
+			<option value="11:00">11:00</option>
+			<option value="11:30">11:30</option>
+			<option value="12:00">12:00</option>
+			<option value="12:30">12:30</option>
+			<option value="13:00">13:00</option>
+			<option value="13:30">13:30</option>
+			<option value="14:00">14:00</option>
+			<option value="14:30">14:30</option>
+			<option value="15:00">15:00</option>
+			<option value="15:30">15:30</option>
+			<option value="16:00">16:00</option>
+			<option value="16:30">16:30</option>
+			<option value="17:00">17:00</option>
+			<option value="17:30">17:30</option>
+			<option value="18:00">18:00</option>
+			<option value="18:30">18:30</option>
+			<option value="19:00">19:00</option>
+			<option value="19:30">19:30</option>
+			<option value="20:00">20:00</option>
+			<option value="20:30">20:30</option>
+			<option value="21:00">21:00</option>
+			<option value="21:30">21:30</option>
+			<option value="22:00">22:00</option>
+			<option value="22:30">22:30</option>
+			<option value="23:00">23:00</option>
+			<option value="23:30">23:30</option>
+
+			
+    	</select>
+
+
+    	<br><label>Location:</label><input id="modalLocation" type="text">
+    	<br><label>More information:</label><br><textarea id="modalBlurb"></textarea>
+    	<br>
+		<button class="fancyButton" id="addEvent">Add Event</button>
+    	
+    </form>
+    
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script src="/cookie/jquery.cookie.js"></script>
+<script>
+$(document).ready(function(){
+	$("#addEvent").click(function(e){
+		e.preventDefault();
+			var id= $.cookie('username');
+			var atitle = $("#modalName").val();
+			var aMonth = $("#modalMonth").val();
+		   	var aDay = $("#modalDay").val();
+			var aSTime = "2013-" + aMonth + "-" + aDay + " " + $("#modalSTime").val()+":00";
+	    	var aETime = "2013-" + aMonth + "-" + aDay + " " + $("#modalETime").val()+":00" ;
+	 
+	    	var aBlurb = $("#modalBlurb").val();
+	    	var aLocation = $("#modalLocation").val();
+	    	
+	   //  	console.log({
+				// 	cookieId: id, 
+				// 	type: "new", 
+				// 	update: "0", 
+				// 	title: atitle, 
+				// 	startTime: aSTime, 
+				// 	endTime:aETime, 
+				// 	location: aLocation, 
+				// 	blurb: aBlurb
+				// });
+	    	$.ajax("addEvents.php",{
+	    		type:"POST",
+	    		data:{
+	    			cookieId: id, 
+		    		type: "new", 
+		    		update: "0", 
+		    		title: atitle, 
+		    		startTime: aSTime, 
+		    		endTime:aETime, 
+		    		location: aLocation, 
+		    		blurb: aBlurb
+		    	},
+
+		    	success: successCallback
+	    	});
+
+	});
+
+});
+function successCallback(){
+	alert("gotem. check dat database");
+}
+
+</script>

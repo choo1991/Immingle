@@ -12,7 +12,9 @@
 		status: 1 is going, 0 is just saving,
 		update: 1 is updating status, 0 is newly saving
 */
-
+// Following two lines used to enable php errors
+// error_reporting(E_ALL);
+// ini_set('display_errors', 'On');
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	$id => $_POST['cookieId']; // cookie id

@@ -14,7 +14,9 @@ echo '<!DOCTYPE html>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
     <script src="/cookie/jquery.cookie.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="modal.js"></script>
     <script src="basic.js"></script>
+
 
 </head>
 
@@ -43,7 +45,7 @@ echo '<!DOCTYPE html>
     </div>
 </div>
 
-<div class="first background">
+<div class="secondNav background">
     <div class="container">
         <div class ="row">
             <div class="span10 offset1">
@@ -58,5 +60,6 @@ echo '<!DOCTYPE html>
         </div>
     </div>
 </div>
+<div class="spacer"></div>
 ';
 //<!--Need to include the function for the top nav still-->

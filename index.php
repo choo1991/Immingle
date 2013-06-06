@@ -21,13 +21,13 @@ if (isset($_COOKIE['username'])) {
 		<div>
 			<img id= "cover" src='asianz.jpg' alt = 'welcome' />
 			<p class="caption">
-				<span id="captionTitle">Cultural Food Festival</span><br>Love food? We do too! Join us for a delicious adventure at Seattle's International District's Annual Summer Festival!
+				<span class="captionTitle">Cultural Food Festival</span><br>Love food? We do too! Join us for a delicious adventure at Seattle's International District's Annual Summer Festival!
 
 			</p>
 		</div>
 	</div>
 	<div class="column">
-		<div class = "box">
+		<div class = "box shadow">
 			<h2>LOGIN</h2>
 			<form action="login.php" method="post" id="loginForm">
 				<label for="username">Email Address:</label><br>
