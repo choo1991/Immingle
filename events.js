@@ -1,5 +1,5 @@
 $(document).ready(function(){
 
-	console.log($.cookie('username'));
+	var cookieId = $.cookie('username'));
 
 });
