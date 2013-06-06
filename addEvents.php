@@ -37,42 +37,61 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 	if ($requestType == "new" && $_POST['update'] == 0) {
 		$title = $_POST['title'];
-		$datetime = $_POST['timeDate'];
+		$startTime = $_POST['startTime'];
+		$endTime = $_POST['endTime'];
 		$location = $_POST['location'];
 		$blurb = $_POST['blurb'];
-		$addEvent = "INSERT INTO Events (title, datetime, location, picId, blurb, ownerId) 
-			VALUES (:title, :time, :location, '1', :blurb, :ownerId)";
+		$addEvent = "INSERT INTO Events (title, startTime, endTime location, picId, blurb, ownerId) 
+			VALUES (:title, :startTime, :endTime, :location, '1', :blurb, :ownerId)";
 
 		$data = array(
 			'title' => $title,
-			'time' => $datetime,
+			'startTime' => $startTime,
+			'endTime' => $endTime,
 			'location' => $location,
 			'blurb' => $blurb
 		);
 
 		$add = $db->prepare($addEvent);
-		if ($attend->execute($data) {
+
+		$attend->execute($data);
+		$queryId = $db->exec();
+		if ($queryId >0) {
 			echo json_encode(array('success' => 1));
 		} else {
 			echo json_encode(array('success' => 0));
 		}
+
+		// if ($attend->execute($data) {
+		// 	echo json_encode(array('success' => 1));
+		// } else {
+		// 	echo json_encode(array('success' => 0));
+		// }
 	} else {
 		$title = $_POST['title'];
 		$datetime = $_POST['timeDate'];
 		$location = $_POST['location'];
 		$blurb = $_POST['blurb'];
-		$updateEvent = "UPDATE Events SET title = :title, datetime = :time, location = :location, blurb = :blurb 
+		$updateEvent = "UPDATE Events SET title = :title, startTime = :startTime, endTime = :endTime, location = :location, blurb = :blurb 
 			WHERE userId = :userId AND eventId = :eventId";
 
 		$newData = array(
 			'title' => $title,
-			'time' => $datetime,
+			'startTime' => $startTime,
+			'endTime' => $endTime,
 			'location' => $location,
 			'blurb' => $blurb
 		);
 
 		$update = $db->prepare($updateEvent);
-		if ($update->execute($newData) {
+		// if ($update->execute($newData) {
+		// 	echo json_encode(array('success' => 1));
+		// } else {
+		// 	echo json_encode(array('success' => 0));
+		// }
+		$update->execute($newData)
+		$queryId = $db->exec();
+		if ($queryId >0) {
 			echo json_encode(array('success' => 1));
 		} else {
 			echo json_encode(array('success' => 0));

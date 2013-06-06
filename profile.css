@@ -37,11 +37,16 @@
 #allContent{
 	background-color:white;
 	padding:20px;
+	font-size:20px;
 }
 #allContent form{
 	background-color:grey;
 	padding:5px 10px;
 }
+#defaultContent h1{
+	font-size:20px;
+}
+
 #allContent form label{
 	display:inline;
 	font-size:1.2em;
