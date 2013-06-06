@@ -1,5 +1,7 @@
 <?php
 
+// REQUIRES location AS DATA INPUT
+
 if ($_SERVER['REQUEST_METHOD'] == "GET") {
 
 	//select all rows from the table where the username matches the one entered by the user
